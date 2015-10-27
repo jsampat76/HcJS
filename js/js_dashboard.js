@@ -53,22 +53,67 @@
 			}
 
 		 $('#resumeupload').submit(function () {
-            formData = new FormData($(this)[0]);
-            $.ajax({
+			 Id=$("#Id").val();
+			  navigator.camera.getPicture(uploadPhoto,
+                                        function(message) { alert('get picture failed'); },
+                                        { quality: 50, 
+                                        destinationType: navigator.camera.DestinationType.FILE_URI,
+                                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
+                                        );
+										
+            formData = new FormData($(this));
+          /*  $.ajax({
                 type:'POST',
                 url: base_url+"resumeupload",
                 data:formData,
                 contentType: false,
                 processData: false,
                 error:function (jqXHR, textStatus, errorThrown) {
-                    alert('Failed to upload file')
+                  alert('Failed to upload file');
+				     
                 },
                 success:function () {
-                    alert('File uploaded')
+                    alert('File uploaded');
                 }
-				})
+				})*/
             return false
 			});
+			
+			function uploadPhoto(imageURI) {
+			var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+
+            var params = {};
+            params.id = Id;
+            params.value2 = "param";
+
+            options.params = params;
+			//alert(imageURI);
+            var ft = new FileTransfer();
+            ft.upload(imageURI, encodeURI("http://bluesys.in/dev/recruitmentbackend/upload.php"), win, fail, options);
+        }
+
+        function win(r) {
+           	navigator.notification.alert(
+			'Uploaded Successfully',  // message
+			null,         // callback
+			'Success',            // title
+			'OK'                  // buttonName
+			);
+        }
+
+        function fail(error) {
+            navigator.notification.alert(
+			'Error in file Upload',  // message
+			null,         // callback
+			'Fail',            // title
+			'OK'                  // buttonName
+			);
+        }
+
+			
 		});
 
 			//-------Logout -----------//
