@@ -8,13 +8,7 @@
 	<!-- app icon-->
 
         <icon src="icon.png" gap:platform="android"/>
-        <gap:splash src="splash.png" gap:platform="android"/>
-        <gap:splash src="ldpi.png" gap:platform="android" gap:density="ldpi" />
-        <gap:splash src="mdpi.png" gap:platform="android" gap:density="mdpi" />
-        <gap:splash src="hdpi.png" gap:platform="android" gap:density="hdpi" />
-        <gap:splash src="xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-        <gap:splash src="xxhdpi.png" gap:platform="android" gap:density="xxhdpi" />
-        <prefernce name="SplashScreen" value="splash" />
+       
 <!-- plugins -->
 <gap:plugin name="com.indigoway.cordova.whitelist.whitelistplugin" version="1.1.1" />
 <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
@@ -24,6 +18,15 @@
 <gap:plugin name="org.apache.cordova.file-transfer" source="npm"  />
 <gap:plugin name="org.apache.cordova.file" version="1.3.1" />
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
+<gap:plugin name="org.apache.cordova.splashscreen" />
+        <gap:splash src="splash.png" gap:platform="android"/>
+        <prefernce name="SplashScreen" value="screen" />
+        <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+        <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+        <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+        <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+        	
+        <preference name="SplashScreenDelay" value="10000" />
 
 <platform name="android">
         <preference name="Fullscreen" value="true" />
