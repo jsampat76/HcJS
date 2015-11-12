@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.MedicalRecruitment.JobMD"
+    id          = "com.Recruitment.JobSeeker"
     versionCode = "10" 
     version     = "1.0.0" >
 
@@ -18,7 +18,7 @@
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
 <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
 <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
-<!--
+
 <gap:splash src="img/splash_converted_120.png" gap:platform="android" gap:qualifier="ldpi" />
 <gap:splash src="img/splash_converted_160.png" gap:platform="android" gap:qualifier="mdpi" />
 <gap:splash src="img/splash_converted_240.png" gap:platform="android" gap:qualifier="hdpi" />
@@ -29,24 +29,24 @@
 <gap:splash src="img/splash_converted_160.png" gap:platform="android" gap:density="mdpi" />
 <gap:splash src="img/splash_converted_240.png" gap:platform="android" gap:density="hdpi" />
 <gap:splash src="img/splash_converted_320.png" gap:platform="android" gap:density="xhdpi" />
-<gap:splash src="img/splash_converted_480.png" gap:platform="android" gap:density="xxhdpi" />-->
+<gap:splash src="img/splash_converted_480.png" gap:platform="android" gap:density="xxhdpi" />
 <gap:splash src="img/splash.png" />
 <preference name="SplashScreen" value="screen" />
 <preference name="AutoHideSplashScreen" value="false" />
 <preference name="SplashScreenDelay" value="3000" />
 <platform name="android">
-        <preference name="Fullscreen" value="true" />
+
 </platform>
  
     <!-- versionCode is optional and Android only -->
-    <name>JobMD</name>
+    <name>JobSeeker</name>
 
     <description>
-    Medical Recruitment-JobSeeker
+    Recruitment-JobSeeker
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
-  Sampat Jadhav
+  Priyanka Mhatre
     </author>
 
     <!--
